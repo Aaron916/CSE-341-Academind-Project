@@ -1,0 +1,22 @@
+{
+  "name": "aarons-homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "author": "Aaron Rooks",
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.7.4",
+    "express": "^4.17.2",
+    "mongodb": "^3.7.3",
+    "mongoose": "^5.13.14"
+  }
+}
