@@ -89,6 +89,7 @@ mongoose
     MONGODB_URI
   )
   .then(result => {
+    console.log('starting up');
     app.listen(3000);
   })
   .catch(err => {
