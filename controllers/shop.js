@@ -32,8 +32,10 @@ exports.getProduct = (req, res, next) => {
 };
 
 exports.getIndex = (req, res, next) => {
+  console.log('fetching products for index page.')
   Product.find()
     .then(products => {
+      console.log('rendering products')
       res.render('shop/index', {
         prods: products,
         pageTitle: 'Shop',
