@@ -150,7 +150,7 @@ exports.getProducts = (req, res, next) => {
 
 exports.postDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
-  Product.deleteOne({_id: prodId, userId: req.session.user_id})
+  Product.deleteOne({_id: prodId, userId: req.user})
     .then(() => {
       console.log('DESTROYED PRODUCT');
       res.redirect('/admin/products');
