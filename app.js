@@ -32,6 +32,7 @@ app.use('/500', errorController.get500);
 //app.use(errorController.get404);
 
 app.use((error, req, res, next) => {
+  console.log('loading 500 page');
   res.status(500).render('500', { pageTitle: 'Error Found', path: '/500', isAuthenticated: req.isAuthenticated });
 });
 
@@ -89,8 +90,12 @@ mongoose
     MONGODB_URI
   )
   .then(result => {
-    console.log('starting up');
-    app.listen(3000);
+    let port = process.env.PORT;
+    if (port == null || port == '') {
+      port = 3000;
+    };
+    console.log('starting up on: ' + port);
+    app.listen(port);
   })
   .catch(err => {
     console.log(err);
